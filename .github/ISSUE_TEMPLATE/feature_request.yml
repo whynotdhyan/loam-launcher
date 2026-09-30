@@ -1,0 +1,28 @@
+name: Feature Request
+description: Suggest an idea or enhancement for LOAM Launcher
+title: "[Feature]: "
+labels: ["enhancement"]
+body:
+  - type: markdown
+    attributes:
+      value: |
+        LOAM prioritizes calm typography, Swiss design, fast startup, and non-intrusive desktop utility over bloated feature sets. Please review the design principles before suggesting major additions.
+  - type: textarea
+    id: problem
+    attributes:
+      label: Is your feature request related to a problem?
+      description: A clear description of the limitation or workflow hurdle.
+    validations:
+      required: true
+  - type: textarea
+    id: proposed-solution
+    attributes:
+      label: Describe the solution you'd like
+      description: A clear explanation of what should happen and how it fits LOAM's philosophy.
+    validations:
+      required: true
+  - type: textarea
+    id: alternatives
+    attributes:
+      label: Describe alternatives you've considered
+      description: Any alternative solutions or workarounds you've used.

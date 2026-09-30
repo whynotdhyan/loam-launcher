@@ -1,0 +1,107 @@
+@import "./tokens.css";
+
+*, *::before, *::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  background-color: var(--loam-paper);
+  color: var(--loam-ink);
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+  font-size: 15px;
+  line-height: 24px;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  user-select: none;
+  overflow: hidden;
+  height: 100vh;
+  width: 100vw;
+}
+
+/* Typography Scale */
+.text-display {
+  font-size: clamp(44px, 6vw, 72px);
+  line-height: 1.0;
+  font-weight: 600;
+  letter-spacing: -0.03em;
+}
+
+.text-h1 {
+  font-size: 32px;
+  line-height: 36px;
+  font-weight: 600;
+  letter-spacing: -0.02em;
+}
+
+.text-h2 {
+  font-size: 20px;
+  line-height: 28px;
+  font-weight: 600;
+}
+
+.text-body {
+  font-size: 15px;
+  line-height: 24px;
+  font-weight: 400;
+}
+
+.text-label {
+  font-size: 11px;
+  line-height: 16px;
+  font-weight: 500;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+}
+
+.text-mono {
+  font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace;
+  font-size: 12px;
+  line-height: 18px;
+  font-variant-numeric: tabular-nums;
+}
+
+/* Contrast-Safe Secondary Text (Never use Muted for meaningful text) */
+.text-secondary {
+  color: var(--loam-text-2);
+}
+
+.text-accent-deep {
+  color: var(--loam-accent-deep);
+}
+
+/* Base interactive elements */
+button, input, textarea, select {
+  font: inherit;
+  color: inherit;
+}
+
+button {
+  cursor: pointer;
+  border: none;
+  background: transparent;
+  transition: background-color var(--dur-micro) var(--ease-loam),
+              color var(--dur-micro) var(--ease-loam),
+              box-shadow var(--dur-micro) var(--ease-loam);
+}
+
+button:focus-visible, input:focus-visible, textarea:focus-visible {
+  outline: none;
+  box-shadow: var(--focus-ring);
+}
+
+/* Base Card / Sheet / Popover */
+.loam-panel {
+  background-color: var(--loam-white);
+  border: 1px solid var(--loam-line);
+  border-radius: 4px;
+}
+
+.loam-sheet {
+  background-color: var(--loam-white);
+  border-top: 1px solid var(--loam-line);
+  border-top-left-radius: 8px;
+  border-top-right-radius: 8px;
+  box-shadow: 0 12px 32px var(--loam-scrim);
+}

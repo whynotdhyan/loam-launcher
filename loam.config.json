@@ -1,0 +1,44 @@
+{
+  "$schema": "./docs/schemas/loam.config.schema.json",
+  "app": {
+    "name": "LOAM",
+    "tagline": "Your worlds, ready.",
+    "version": "1.0.0",
+    "minWindowWidth": 960,
+    "minWindowHeight": 600,
+    "defaultWindowWidth": 1120,
+    "defaultWindowHeight": 720
+  },
+  "support": {
+    "discordInviteUrl": "https://discord.gg/loam-launcher",
+    "knownIssuesFeedUrl": "https://raw.githubusercontent.com/whynotdhyan/loam-launcher/main/docs/known-issues.json",
+    "communityForumUrl": "https://github.com/whynotdhyan/loam-launcher/discussions"
+  },
+  "network": {
+    "allowlistedDomains": [
+      "discord.gg",
+      "discord.com",
+      "launchermeta.mojang.com",
+      "piston-meta.mojang.com",
+      "libraries.minecraft.net",
+      "resources.download.minecraft.net",
+      "meta.fabricmc.net",
+      "maven.fabricmc.net",
+      "api.modrinth.com",
+      "cdn.modrinth.com",
+      "raw.githubusercontent.com",
+      "login.microsoftonline.com",
+      "user.auth.xboxlive.com",
+      "xsts.auth.xboxlive.com",
+      "api.minecraftservices.com"
+    ],
+    "maxConcurrentDownloads": 8,
+    "downloadTimeoutSeconds": 30,
+    "retryBackoffMs": 500
+  },
+  "security": {
+    "redactionEnabled": true,
+    "allowUnsafeJvmArgs": false,
+    "maxDropFileSizeBytes": 1073741824
+  }
+}

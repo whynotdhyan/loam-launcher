@@ -1,0 +1,50 @@
+{
+  "name": "loam-launcher",
+  "version": "1.0.0",
+  "description": "Your worlds, ready. A calm, typography-led Minecraft Java Edition desktop launcher.",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "dev": "vite",
+    "build": "tsc && vite build",
+    "preview": "vite preview",
+    "tauri": "tauri",
+    "lint": "tsc --noEmit"
+  },
+  "dependencies": {
+    "@tauri-apps/api": "^2.0.0",
+    "@tauri-apps/plugin-dialog": "^2.0.0",
+    "@tauri-apps/plugin-fs": "^2.0.0",
+    "@tauri-apps/plugin-opener": "^2.0.0",
+    "@tauri-apps/plugin-shell": "^2.0.0",
+    "lucide-react": "^0.475.0",
+    "react": "^18.3.1",
+    "react-dom": "^18.3.1"
+  },
+  "devDependencies": {
+    "@tauri-apps/cli": "^2.0.0",
+    "@types/node": "^22.10.0",
+    "@types/react": "^18.3.12",
+    "@types/react-dom": "^18.3.1",
+    "@vitejs/plugin-react": "^4.3.4",
+    "typescript": "^5.6.3",
+    "vite": "^6.0.0"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/whynotdhyan/loam-launcher.git"
+  },
+  "keywords": [
+    "minecraft",
+    "minecraft-launcher",
+    "tauri",
+    "tauri2",
+    "rust",
+    "react",
+    "typescript",
+    "desktop",
+    "swiss-design"
+  ],
+  "author": "LOAM Team",
+  "license": "GPL-3.0-only"
+}

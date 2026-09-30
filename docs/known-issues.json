@@ -1,0 +1,29 @@
+{
+  "schema": 1,
+  "issues": [
+    {
+      "id": "LOAM-0012",
+      "fingerprint": "launch.java.unsupported_class_version",
+      "title": "Legacy modpack fails to start on newest OpenJDK 21",
+      "status": "fixed",
+      "fixedIn": "1.0.1",
+      "workaround": "Choose Java 17 for this game in Game settings."
+    },
+    {
+      "id": "LOAM-0015",
+      "fingerprint": "import.fabric.corrupt_jar_header",
+      "title": "Corrupt mod file rejected during Smart Drop",
+      "status": "workaround",
+      "fixedIn": null,
+      "workaround": "Re-download the mod JAR directly from Modrinth or CurseForge."
+    },
+    {
+      "id": "LOAM-0020",
+      "fingerprint": "auth.microsoft.pending_approval",
+      "title": "Azure App Registration pending Minecraft Services access",
+      "status": "investigating",
+      "fixedIn": null,
+      "workaround": "Use Offline Profile for local and offline-server play until Mojang approves Azure App ID."
+    }
+  ]
+}

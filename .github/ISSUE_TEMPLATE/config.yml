@@ -1,0 +1,8 @@
+blank_issues_enabled: false
+contact_links:
+  - name: Discord Community (#support)
+    url: https://discord.gg/loam-launcher
+    about: Join our community server for quick troubleshooting, questions, and discussion.
+  - name: GitHub Discussions
+    url: https://github.com/whynotdhyan/loam-launcher/discussions
+    about: General questions, modding discussions, and community showcases.

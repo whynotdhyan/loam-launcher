@@ -1,0 +1,34 @@
+:root {
+  /* Locked brand palette (Do not modify) */
+  --loam-accent:       #C15F3C;   /* primary action, active, progress fill */
+  --loam-paper:        #F4F3EE;   /* main canvas */
+  --loam-white:        #FFFFFF;   /* panels, sheets, popovers */
+  --loam-muted:        #B1ADA1;   /* hairline accents, disabled, decorative labels */
+  --loam-ink:          #171715;   /* main text */
+
+  /* Derived functional tokens (mixed from the five brand colors) */
+  --loam-accent-deep:  #9F4A2B;   /* small accent text, links, error rule (≈5.4:1 on paper) */
+  --loam-accent-press: #A9512F;   /* hover/pressed fill */
+  --loam-accent-tint:  #EDDED5;   /* progress track, selected row, warning wash */
+  --loam-text-2:       #6F6B60;   /* secondary text (≈4.8:1 on paper) */
+  --loam-line:         #D9D8D3;   /* hairlines and borders */
+  --loam-sunken:       #ECEBE5;   /* inset areas, disabled fill, tile background */
+  --loam-scrim:        rgb(23 23 21 / 0.32);
+
+  /* Motion tokens */
+  --dur-micro:         120ms;
+  --dur-state:         200ms;
+  --dur-sheet:         320ms;
+  --ease-loam:         cubic-bezier(0.2, 0, 0, 1);
+
+  /* Focus ring tokens */
+  --focus-ring:        0 0 0 2px var(--loam-paper), 0 0 0 4px var(--loam-ink), 0 0 0 5px var(--loam-accent-tint);
+}
+
+@media (prefers-reduced-motion: reduce) {
+  :root {
+    --dur-micro: 0ms;
+    --dur-state: 0ms;
+    --dur-sheet: 0ms;
+  }
+}

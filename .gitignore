@@ -1,0 +1,41 @@
+# Node & Frontend
+node_modules/
+dist/
+dist-ssr/
+*.local
+.npm
+.eslintcache
+
+# Rust & Tauri
+src-tauri/target/
+src-tauri/gen/
+**/*.rs.bk
+
+# OS & IDE
+.DS_Store
+Thumbs.db
+*.swp
+*.swo
+.vscode/*
+!.vscode/extensions.json
+!.vscode/settings.json
+.idea/
+
+# LOAM Local User Data & Caches (Never commit user secrets or game files)
+cache/
+games/
+backups/
+reports/
+logs/
+*.log
+*.zip
+
+# Sensitive secrets & credentials
+.env
+.env.*
+*.pfx
+*.p12
+*.pem
+*.key
+credentials.json
+signer-cert.pfx

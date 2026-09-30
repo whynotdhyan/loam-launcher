@@ -1,0 +1,40 @@
+[package]
+name = "loam-launcher"
+version = "1.0.0"
+description = "Your worlds, ready. A calm, typography-led Minecraft Java Edition desktop launcher."
+authors = ["LOAM Contributors"]
+edition = "2021"
+license = "GPL-3.0-only"
+
+[lib]
+name = "loam_launcher_lib"
+crate-type = ["staticlib", "cdylib", "rlib"]
+
+[build-dependencies]
+tauri-build = { version = "2.0.0", features = [] }
+
+[dependencies]
+tauri = { version = "2.0.0", features = ["tray-icon"] }
+tauri-plugin-opener = "2.0.0"
+tauri-plugin-dialog = "2.0.0"
+tauri-plugin-fs = "2.0.0"
+tauri-plugin-shell = "2.0.0"
+
+serde = { version = "1.0", features = ["derive"] }
+serde_json = "1.0"
+tokio = { version = "1.38", features = ["full"] }
+reqwest = { version = "0.12", features = ["json", "stream"] }
+sha1 = "0.10"
+sha2 = "0.10"
+uuid = { version = "1.9", features = ["v3", "v4", "serde"] }
+md-5 = "0.10"
+regex = "1.10"
+zip = { version = "2.1", default-features = false, features = ["deflate"] }
+sysinfo = "0.30"
+chrono = { version = "0.4", features = ["serde"] }
+thiserror = "1.0"
+anyhow = "1.0"
+
+[features]
+default = ["custom-protocol"]
+custom-protocol = ["tauri/custom-protocol"]
