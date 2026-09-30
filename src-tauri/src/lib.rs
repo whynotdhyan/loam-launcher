@@ -7,7 +7,7 @@ pub mod java;
 pub mod launch;
 pub mod support;
 
-use accounts::{AccountProfile, AccountType};
+use accounts::AccountProfile;
 use diagnostics::{generate_report_id, GuidedReportData};
 use games::GameInstance;
 use std::sync::Mutex;
