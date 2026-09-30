@@ -8,66 +8,80 @@ A calm, typography-led desktop launcher for Minecraft Java Edition.
 Engineered with Tauri 2, Rust, and React for Windows 10/11 x64.
 
 [![LOAM CI](https://github.com/whynotdhyan/loam-launcher/actions/workflows/ci.yml/badge.svg)](https://github.com/whynotdhyan/loam-launcher/actions/workflows/ci.yml)
-[![Release](https://img.shields.io/github/v/release/whynotdhyan/loam-launcher?label=release&color=C15F3C)](https://github.com/whynotdhyan/loam-launcher/releases)
+[![Download LOAM](https://img.shields.io/github/v/release/whynotdhyan/loam-launcher?label=Download%20Setup.exe&color=C15F3C)](https://github.com/whynotdhyan/loam-launcher/releases)
 [![License: GPL-3.0](https://img.shields.io/badge/license-GPL--3.0-171715.svg)](LICENSE)
 [![Platform: Windows 10 / 11 x64](https://img.shields.io/badge/platform-Windows%20x64-EDDED5.svg?color=9F4A2B)](docs/support-matrix.md)
 [![Discord](https://img.shields.io/badge/chat-on%20Discord-7289da.svg)](https://discord.gg/loam-launcher)
+
+<br/>
+
+<img src="docs/images/home-screen.jpg" alt="LOAM Launcher Home Screen" width="920" style="border-radius: 6px; border: 1px solid #D9D8D3; box-shadow: 0 12px 32px rgba(23, 23, 21, 0.12);" />
 
 </div>
 
 ---
 
-## Overview
+## Direct Download & Installation
 
-**LOAM** evokes the fertile ground worlds are built on. Designed with an editorial, Swiss-minimalist aesthetic, it replaces cluttered game-store launchers with a focused desktop utility. The interface emphasizes three core actions: **Play**, **Install**, and **Switch Games**.
+LOAM is distributed as a self-contained Windows setup executable. **No terminal, Node.js, Rust, or command prompt is required.**
 
-- **Calm, High-Contrast Design**: Built on a locked 5-color palette (`#C15F3C` terracotta accent, `#F4F3EE` paper canvas, `#171715` ink) adhering strictly to WCAG 2.2 AA contrast rules.
-- **Isolated Game Sandboxes**: Every game instance resides in its own isolated directory (`%APPDATA%\LOAM\games\<stable-id>`). Changing versions never silently breaks or modifies existing worlds.
-- **Single Legitimate Online Login**: Official Microsoft authorization-code flow with PKCE via your default browser. Zero client secrets embedded; zero passwords handled. Tokens reside safely in the **Windows Credential Manager** backed by DPAPI.
-- **Transparent Offline Profiles**: Clear, honest offline profiles with deterministic vanilla UUID v3 generation for LAN, local play, and offline-mode testing.
-- **Smart Drop & Safe Migration**: Drag and drop Fabric mods, `.mrpack` archives, or resource packs with pre-flight inspection and zip-slip prevention. Importer strictly copies game assets—it never reads, parses, or touches credentials from other launchers.
-- **Integrated Support & Redaction**: Built-in guided diagnostics form producing Discord-ready Markdown (<1,800 chars) and redacted diagnostic bundles with zero token leakage.
+### 📥 1. Download
+Get the official setup executable for Windows 10 & 11 x64:
 
----
+👉 **[Download LOAM Setup.exe (Latest Release)](https://github.com/whynotdhyan/loam-launcher/releases/latest/download/LOAM.Setup.exe)**  
+*(Alternatively, view all releases and checksums on the [Releases Page](https://github.com/whynotdhyan/loam-launcher/releases))*
 
-## Desktop Interface
+### 🚀 2. Install (One Click)
+1. Double-click the downloaded **`LOAM Setup.exe`**.
+2. Follow the standard Windows setup wizard (installs cleanly for the current user without requiring administrator privileges).
+3. LOAM will open automatically and add a shortcut to your **Desktop** and **Start Menu**.
 
-```text
-┌────────────────────────────────────────────────────────────────────────┐
-│ LOAM                                    ◉ Alex · MICROSOFT ✓   ?   ⚙  │
-│ JAVA EDITION                                                            │
-│ YOUR WORLDS, READY.                                                     │
-│                                                                         │
-│                                                                         │
-│   Survival SMP                                                          │
-│   26.3 · Fabric · 4 GB                                                  │
-│                                                                         │
-│   [           PLAY           ]                                          │
-│   Ready · verified 2 min ago                                            │
-│                                                                         │
-│                                                                         │
-│   INSTALL +    ⇣ Drop a mod, pack or world     [SM][CR][TS][+3]         │
-│ ────────────────────────────────────────────────────────────────────── │
-│   30 SEP  Minecraft Java Edition 26.3 Release Candidate       READ ↗   │
-└────────────────────────────────────────────────────────────────────────┘
-```
+### 🎮 3. Play
+1. **Choose your account:** Sign in with your **Microsoft Account** (with Xbox / Minecraft Java entitlement verification) or create an **Offline Profile** for local play and LAN.
+2. **Select your game:** Pick between Vanilla or Fabric, adjust memory with the slider, or drop in your favorite mods and worlds.
+3. Click **PLAY**. Your worlds, ready.
 
 ---
 
-## Architecture & Technology Stack
+## Interface Gallery
 
-| Layer | Technologies | Purpose |
-|---|---|---|
-| **Shell & Core** | Tauri 2 · Rust 1.78+ | Native OS windowing, memory safety, argument vector process spawning, Windows Credential Manager DPAPI vault. |
-| **User Interface** | React 18 · TypeScript · Vite | Typographic layout, WCAG AA accessibility, keyboard-first navigation (`Ctrl+Enter`, `Ctrl+K`, `Ctrl+N`). |
-| **Networking** | Reqwest · Tokio | Resumable chunked downloads, official Mojang/Fabric API manifest resolution, SHA-1/SHA-256 verification. |
-| **Diagnostics** | Canary Redaction Suite | Automatic sanitization of tokens, email addresses, and Windows user paths before export. |
+<div align="center">
+
+### Your Games — Every world, in its own space
+Seamlessly create, switch, and isolate vanilla and modded instances without directory clutter.
+<br/><br/>
+<img src="docs/images/games-screen.jpg" alt="LOAM Games Screen" width="880" style="border-radius: 4px; border: 1px solid #D9D8D3;" />
+
+<br/><br/>
+
+### Smart Drop & Import Review
+Drag and drop Fabric mods, `.mrpack` modpacks, resource packs, shaders, or worlds with pre-flight inspection.
+<br/><br/>
+<img src="docs/images/install-screen.jpg" alt="LOAM Smart Drop & Install Screen" width="880" style="border-radius: 4px; border: 1px solid #D9D8D3;" />
+
+<br/><br/>
+
+### Thoughtful, Restrained Settings
+Manage Java runtimes, RAM allocation, storage directories, and appearance with pure Swiss typography.
+<br/><br/>
+<img src="docs/images/settings-screen.jpg" alt="LOAM Settings Screen" width="880" style="border-radius: 4px; border: 1px solid #D9D8D3;" />
+
+</div>
+
+---
+
+## Key Features
+
+* **Calm, High-Contrast Design**: Built on a locked 5-color palette (`#C15F3C` terracotta accent, `#F4F3EE` paper canvas, `#171715` ink) strictly conforming to WCAG 2.2 AA contrast rules.
+* **Isolated Game Sandboxes**: Every game instance resides in its own isolated directory (`%APPDATA%\LOAM\games\<stable-id>`). Changing versions never silently breaks or modifies existing worlds.
+* **Official Microsoft Authentication**: Secure OAuth 2.0 Authorization Code flow with PKCE via your default system browser. Zero passwords handled, zero embedded webviews. Tokens reside in the encrypted **Windows Credential Manager** (DPAPI).
+* **Transparent Offline Profiles**: Clearly labeled offline profiles with deterministic vanilla UUID v3 generation for LAN, local testing, and offline-mode servers. Never claims fake entitlements.
+* **Zero Credential Ingestion**: Importer strictly copies game assets (`saves/`, `mods/`, `options.txt`, `servers.dat`)—it never reads, parses, or touches credentials from other launchers (e.g. TLauncher).
+* **Support & Integrated Redaction**: Built-in diagnostics generator producing Discord-ready Markdown (<1,800 characters) and redacted diagnostic bundles with 100% token and path sanitization.
 
 ---
 
 ## Account Capability Matrix
-
-LOAM enforces transparent account capabilities in both the UI chips and the launch pre-flight engine:
 
 | Capability | Microsoft Account | Offline Profile | Third-Party Auth (Gate I) |
 |---|:---:|:---:|:---:|
@@ -80,69 +94,34 @@ LOAM enforces transparent account capabilities in both the UI chips and the laun
 
 ---
 
-## Release Gates & Implementation Status
-
-| Gate | Milestone | Target | Status |
-|:---:|---|:---:|:---:|
-| **A** | **Desktop Shell & Design System**: Tauri 2, Swiss layout, tokens.css, keyboard navigation (`Ctrl+K`, `Ctrl+Enter`) | v1.0 | :white_check_mark: Complete |
-| **B** | **Vanilla Engine**: Version manifest v2, inheritance, libraries, Java selection, argument vectors | v1.0 | :white_check_mark: Complete |
-| **C** | **Identity**: Microsoft PKCE login, DPAPI credential storage, Offline Profile (UUID v3), capability matrix | v1.0 | :white_check_mark: Complete |
-| **D** | **Games & Import**: Isolated instances, Fabric adapter, Smart Drop review, zero-credential launcher importer | v1.0 | :white_check_mark: Complete |
-| **E** | **Reliability**: Resumable downloads, checksums, atomic backups, corrupt file recovery | v1.0 | :white_check_mark: Complete |
-| **F** | **Windows Release**: Branded icons, NSIS setup (`LOAM Setup.exe`), clean machine test, SHA-256 | v1.0 | :white_check_mark: Complete |
-| **G** | **Support & Feedback**: Guided report, Discord Markdown under 1,800 chars, redacted diagnostics zip | v1.0 | :white_check_mark: Complete |
-| **H** | **Updates**: Tauri updater with signature verification, release notes, user-confirmed update | Post-v1.0 | Planned |
-| **I** | **Extended Ecosystem**: Authlib-injector third-party server support, Forge/NeoForge adapters | Post-v1.0 | Planned |
-
----
-
-## Quickstart & Local Build
-
-### Prerequisites
-- Windows 10/11 x64
-- [Node.js](https://nodejs.org/) v20+ or v22+
-- [Rust](https://rustup.rs/) (stable channel, `x86_64-pc-windows-msvc`)
-- Visual Studio 2022 C++ Build Tools
-
-### Development Mode
-```powershell
-# 1. Clone the repository
-git clone https://github.com/whynotdhyan/loam-launcher.git
-cd loam-launcher
-
-# 2. Install frontend dependencies
-npm install
-
-# 3. Launch with hot reload
-npm run tauri dev
-```
-
-### Packaging Windows NSIS Installer
-```powershell
-npm run tauri build
-```
-The compiled installer will be located at:
-`src-tauri/target/release/bundle/nsis/LOAM Setup 1.0.0.exe`
-
----
-
 ## Keyboard Shortcuts
 
-- `Ctrl + Enter` — Play active game
-- `Ctrl + N` — Create new game installation (`INSTALL +`)
-- `Ctrl + K` — Open Command Palette
-- `Ctrl + ,` — Open Settings
-- `F1` — Open Support & Feedback
-- `Esc` — Close active sheet or modal
+* <kbd>Ctrl</kbd> + <kbd>Enter</kbd> — Play active game
+* <kbd>Ctrl</kbd> + <kbd>N</kbd> — Create new game installation (`INSTALL +`)
+* <kbd>Ctrl</kbd> + <kbd>K</kbd> — Open Command Palette
+* <kbd>Ctrl</kbd> + <kbd>,</kbd> — Open Settings
+* <kbd>F1</kbd> — Open Support & Feedback
+* <kbd>Esc</kbd> — Close active sheet or modal
 
 ---
 
 ## Privacy & Security
 
 LOAM Launcher does not collect telemetry, analytics, or behavioral data.
-- **Token Redaction**: All diagnostic logs pass through our Canary-tested regex sanitizer to strip bearer tokens, refresh tokens, and filesystem paths before export.
-- **Zero Credential Sharing**: We never ask for or store passwords. Microsoft authentication is handed directly to your default operating system browser.
-- **Responsible Disclosure**: Please review our [Security Policy](SECURITY.md) to report vulnerabilities.
+* **Token Redaction**: All diagnostic logs pass through our Canary-tested regex sanitizer to strip bearer tokens, refresh tokens, and user filesystem paths before export.
+* **Zero Credential Sharing**: We never ask for or store passwords. Microsoft authentication is handed directly to your default operating system browser.
+* **Security Disclosures**: Please review our [Security Policy](SECURITY.md) to report vulnerabilities.
+
+---
+
+## Developer Documentation
+
+For developers interested in compiling the Rust and React source code from scratch:
+* [Architecture & Technical Design](docs/architecture.md)
+* [Design System & CSS Tokens](docs/design-system.md)
+* [Building from Source](docs/build.md)
+* [Microsoft & Azure Setup Guide](docs/microsoft-setup.md)
+* [Compatibility & Support Matrix](docs/support-matrix.md)
 
 ---
 
