@@ -40,5 +40,10 @@
     "redactionEnabled": true,
     "allowUnsafeJvmArgs": false,
     "maxDropFileSizeBytes": 1073741824
+  },
+  "auth": {
+    "microsoftClientId": "",
+    "redirectUri": "http://localhost:1420/auth/callback",
+    "prompt": "select_account"
   }
 }

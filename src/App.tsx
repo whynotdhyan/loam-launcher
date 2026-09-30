@@ -6,6 +6,7 @@ import { AccountsSheet } from './screens/AccountsSheet';
 import { SettingsScreen } from './screens/SettingsScreen';
 import { SupportFeedbackScreen } from './screens/SupportFeedbackScreen';
 import { CommandPalette } from './components/CommandPalette';
+import { MicrosoftAuthModal } from './screens/MicrosoftAuthModal';
 
 export const App: React.FC = () => {
   // Navigation screen
@@ -15,6 +16,10 @@ export const App: React.FC = () => {
   const [isInstallOpen, setIsInstallOpen] = useState(false);
   const [isAccountsOpen, setIsAccountsOpen] = useState(false);
   const [isCommandPaletteOpen, setIsCommandPaletteOpen] = useState(false);
+  const [isMicrosoftModalOpen, setIsMicrosoftModalOpen] = useState(false);
+  const [microsoftClientId, setMicrosoftClientId] = useState(() => {
+    return localStorage.getItem('loam_ms_client_id') || '';
+  });
 
   // Sample data conforming to Brief v2
   const [accounts, setAccounts] = useState<AccountProfile[]>([
@@ -234,7 +239,38 @@ export const App: React.FC = () => {
           setIsAccountsOpen(false);
         }}
         onAddOffline={handleAddOffline}
-        onStartMicrosoftLogin={() => alert('Starting Microsoft Browser authorization with PKCE loopback redirect...')}
+        onStartMicrosoftLogin={() => {
+          setIsAccountsOpen(false);
+          setIsMicrosoftModalOpen(true);
+        }}
+      />
+
+      <MicrosoftAuthModal
+        isOpen={isMicrosoftModalOpen}
+        onClose={() => setIsMicrosoftModalOpen(false)}
+        currentClientId={microsoftClientId}
+        onSaveClientId={(id) => {
+          setMicrosoftClientId(id);
+          localStorage.setItem('loam_ms_client_id', id);
+        }}
+        onSuccess={(username, uuid) => {
+          const newMsAcc: AccountProfile = {
+            id: `ms_${uuid}`,
+            username,
+            account_type: 'microsoft',
+            uuid,
+            capabilities: {
+              verified_ownership: true,
+              singleplayer_and_lan: true,
+              online_mode_servers: true,
+              offline_mode_servers: true,
+              realms_access: true,
+              personal_skin: true,
+            },
+          };
+          setAccounts((prev) => [...prev.filter((a) => a.id !== newMsAcc.id), newMsAcc]);
+          setActiveAccountId(newMsAcc.id);
+        }}
       />
 
       <CommandPalette
